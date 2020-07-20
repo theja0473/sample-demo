@@ -17,14 +17,13 @@ pipeline {
     }
     
     stages {
-        loadEnvironmentVariables("${workspace}/pic_env_vars.properties")
         stage('Build') {
-            steps {
-                echo "Branch_env_var is ${env.Micro_var}"
-                echo "Python_exe path is ${env.python_exe_path}"
-                echo "Branch_env_var is ${env.Micro_var_new}"
-                echo "Python_exe path is ${env.python_exe_path_new}"
-                sh 'printenv'
+            loadEnvironmentVariables("${workspace}/pic_env_vars.properties")
+            echo "Branch_env_var is ${env.Micro_var}"
+            echo "Python_exe path is ${env.python_exe_path}"
+            echo "Branch_env_var is ${env.Micro_var_new}"
+            echo "Python_exe path is ${env.python_exe_path_new}"
+            sh 'printenv'
             }
         }
     }
