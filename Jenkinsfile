@@ -3,9 +3,9 @@ pipeline {
 
     environment {
         def workspace = pwd() 
-        def job_var = evaluate(new File("${workspace}/tcx_38_Env.groovy"));
+        environment(readFile("${workspace}/tcx_38_Env.groovy").split('/n') as List);
     }
-
+    
     stages {
         stage('Build') {
             steps {
