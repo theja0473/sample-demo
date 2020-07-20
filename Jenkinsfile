@@ -10,8 +10,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo "WOrkspace Path is ${workspace}"
-                echo "Branch_env_var is ${job_var.Micro}"
-                echo "Python_exe path is ${job_var.python_exe_path}"
+                echo "Branch_env_var is ${env.Micro}"
+                echo "Python_exe path is ${env.python_exe_path}"
                 sh 'printenv'
             }
         }
