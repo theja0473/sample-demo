@@ -1,12 +1,13 @@
+def env_vars;
+
 pipeline {
     agent any
-    load "${workspace}/tcx_38_Env.groovy"
-    
+    env_vars = load "${workspace}/tcx_38_Env.groovy"
     stages {
         stage('Build') {
             steps {
-                echo "Branch_env_var is ${env.Micro}"
-                echo "Python_exe path is ${env.python_exe_path}"
+                echo "Branch_env_var is ${env_vars.Micro}"
+                echo "Python_exe path is ${env_vars.python_exe_path}"
                 sh 'printenv'
             }
         }
