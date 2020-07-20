@@ -2,15 +2,14 @@ pipeline {
     agent any
 
     environment {
-        DISABLE_AUTH = 'true'
-        DB_ENGINE    = 'sqlite'
+        def job_var = evaluate(new File("tcx_38_Env.groovy"));
     }
 
     stages {
         stage('Build') {
             steps {
-                echo "Database engine is ${DB_ENGINE}"
-                echo "DISABLE_AUTH is ${DISABLE_AUTH}"
+                echo "Branch_env_var is ${job_var.Micro}"
+                echo "Python_exe path is ${job_var.Micro}"
                 sh 'printenv'
             }
         }
