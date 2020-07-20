@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Branch_env_var is ${job_var.Micro}"
-                echo "Python_exe path is ${job_var.Micro}"
+                echo "Python_exe path is ${job_var.python_exe_path}"
                 sh 'printenv'
             }
         }
