@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    environment(readFile("${workspace}/tcx_38_Env.groovy").split('/n') as List)
+    load "${workspace}/tcx_38_Env.groovy"
     
     stages {
         stage('Build') {
