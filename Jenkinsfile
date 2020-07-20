@@ -15,8 +15,9 @@ pipeline {
           Micro_var = 'tcx_38'
           python_exe_path = "c:\\Python27\\python.exe"
     }
-    loadEnvironmentVariables("${workspace}/pic_env_vars.properties")
+    
     stages {
+        loadEnvironmentVariables("${workspace}/pic_env_vars.properties")
         stage('Build') {
             steps {
                 echo "Branch_env_var is ${env.Micro_var}"
