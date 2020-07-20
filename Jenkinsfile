@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         def workspace = pwd() 
-        def job_var = evaluate(new File("${workspace}@script/tcx_38_Env.groovy"));
+        def job_var = evaluate(new File("${workspace}/tcx_38_Env.groovy"));
     }
 
     stages {
